@@ -9,15 +9,12 @@ struct Produto {
     float preco;
 };
 
-// PROTÓTIPOS
 int idExiste(int id);
 void cadastrar();
 void listar();
 void buscar();
 void remover();
 void menu();
-
-// ================= FUNÇÕES =================
 
 int idExiste(int id) {
     struct Produto p;
@@ -37,8 +34,6 @@ int idExiste(int id) {
     fclose(file);
     return 0;
 }
-
-// -------------------------------------------
 
 void cadastrar() {
     struct Produto p;
@@ -85,8 +80,6 @@ void cadastrar() {
     printf("\nProduto cadastrado com sucesso!\n");
 }
 
-// -------------------------------------------
-
 void listar() {
     struct Produto p;
 
@@ -109,8 +102,6 @@ void listar() {
 
     fclose(file);
 }
-
-// -------------------------------------------
 
 void buscar() {
     int id, encontrado = 0;
@@ -149,8 +140,6 @@ void buscar() {
     fclose(file);
 }
 
-// -------------------------------------------
-
 void remover() {
     int id, encontrado = 0;
     struct Produto p;
@@ -188,8 +177,7 @@ void remover() {
 
     fclose(file);
     fclose(temp);
-
-    // REMOVE E RENOMEIA COM VERIFICAÇÃO
+    
     if (remove("estoque.dat") != 0) {
         printf("Erro ao deletar arquivo original!\n");
         return;
@@ -207,7 +195,6 @@ void remover() {
     }
 }
 
-// -------------------------------------------
 
 void menu() {
     printf("\n===== CONTROLE DE ESTOQUE =====\n");
@@ -219,7 +206,6 @@ void menu() {
     printf("Escolha: ");
 }
 
-// -------------------------------------------
 
 int main() {
     int opcao;
